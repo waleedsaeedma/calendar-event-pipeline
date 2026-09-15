@@ -1,4 +1,6 @@
-﻿import logging
+import json
+import logging
+import os
 import secrets
 from urllib.parse import urlparse, parse_qs
 
@@ -16,24 +18,22 @@ SCOPES = [
 
 WEB_CREDENTIALS_FILE = "web_credentials.json"
 
-REDIRECT_URI = "http://localhost:5000/oauth2callback"
+REDIRECT_URI = os.getenv(
+    "REDIRECT_URI",
+    "http://localhost:5000/oauth2callback",
+)
 
 
 def _load_client_config() -> dict:
     """Loads Google OAuth client configuration."""
 
     with open(WEB_CREDENTIALS_FILE) as f:
-        import json
-
         return json.load(f)["web"]
 
 
 def get_authorization_url() -> tuple[str, str, str]:
     """Creates the Google OAuth authorization URL and PKCE verifier."""
 
-    # Create our own PKCE verifier.
-    # This guarantees that the exact same verifier is used
-    # during both authorization and token exchange.
     code_verifier = secrets.token_urlsafe(64)
 
     flow = Flow.from_client_secrets_file(
@@ -72,11 +72,14 @@ def exchange_code_for_credentials(
 
     if "error" in query_params:
         error = query_params["error"][0]
-
-        raise RuntimeError(f"Google OAuth authorization failed: {error}")
+        raise RuntimeError(
+            f"Google OAuth authorization failed: {error}"
+        )
 
     if "code" not in query_params:
-        raise RuntimeError("No authorization code was returned by Google.")
+        raise RuntimeError(
+            "No authorization code was returned by Google."
+        )
 
     code = query_params["code"][0]
 
@@ -89,10 +92,11 @@ def exchange_code_for_credentials(
         autogenerate_code_verifier=False,
     )
 
-    # Use the exact verifier that was stored in the session.
     flow.code_verifier = code_verifier
 
-    logger.info("Exchanging authorization code for Google credentials")
+    logger.info(
+        "Exchanging authorization code for Google credentials"
+    )
 
     flow.fetch_token(
         code=code,
@@ -101,6 +105,8 @@ def exchange_code_for_credentials(
 
     credentials = flow.credentials
 
-    logger.info("Google OAuth token exchange successful")
+    logger.info(
+        "Google OAuth token exchange successful"
+    )
 
     return credentials
