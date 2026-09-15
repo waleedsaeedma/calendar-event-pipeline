@@ -463,6 +463,7 @@ def oauth2callback():
 
 
 
+
 @app.route(
     "/search",
     methods=["POST"],
@@ -470,7 +471,6 @@ def oauth2callback():
 def search():
 
     request_text = request.form.get("request_text", "").strip()
-
     creds_json = session.get("credentials")
 
     if not creds_json and Path("user_credentials.json").exists():
@@ -502,6 +502,7 @@ def search():
         return render_template_string("""
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -527,86 +528,187 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1050px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 28px 18px 40px;
+}
+
+.header {
+    margin-bottom: 24px;
 }
 
 h1 {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
+    font-size: 30px;
 }
 
 .subtitle {
+    margin: 0;
     color: #64748b;
-    margin-bottom: 28px;
+    line-height: 1.5;
 }
 
-.table-wrap {
+.events {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.event-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 18px;
+    padding: 22px;
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
-    overflow-x: auto;
+    border: 1px solid #e2e8f0;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid #e2e8f0;
-    vertical-align: middle;
-}
-
-th {
-    background: #f1f5f9;
-    font-size: 14px;
-    white-space: nowrap;
+.event-number {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
 }
 
 .event-name {
+    font-size: 21px;
     font-weight: 700;
-    font-size: 16px;
-    min-width: 220px;
+    line-height: 1.3;
+    margin-bottom: 16px;
 }
 
-.description {
+.event-description {
     color: #64748b;
-    margin-top: 6px;
-    line-height: 1.4;
-    max-width: 320px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+}
+
+.details {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.detail {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.label {
+    min-width: 82px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.value {
+    color: #475569;
+    word-break: break-word;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
 }
 
 button {
-    padding: 10px 16px;
     border: none;
-    border-radius: 9px;
+    border-radius: 10px;
+    padding: 11px 17px;
     background: #0f172a;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
+    font-size: 14px;
 }
 
 button:hover {
-    opacity: 0.85;
+    opacity: 0.88;
 }
 
-a {
-    color: #2563eb;
+.view-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 11px 17px;
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: 700;
     text-decoration: none;
+    font-size: 14px;
 }
 
-a:hover {
-    text-decoration: underline;
+.view-link:hover {
+    text-decoration: none;
+    background: #cbd5e1;
+}
+
+.empty {
+    background: white;
+    border-radius: 18px;
+    padding: 35px 22px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
 }
 
 .back {
     display: inline-block;
     margin-top: 24px;
     color: #475569;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 22px 14px 30px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .events {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .event-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .event-name {
+        font-size: 20px;
+    }
+
+    .detail {
+        display: block;
+    }
+
+    .label {
+        display: block;
+        min-width: 0;
+        margin-bottom: 2px;
+    }
+
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    button,
+    .view-link {
+        width: 100%;
+    }
+
 }
 
 </style>
@@ -617,44 +719,27 @@ a:hover {
 
 <div class="container">
 
+<div class="header">
+
 <h1>EventScout Results</h1>
 
 <p class="subtitle">
 {{ message }}
 </p>
 
+</div>
+
 {% if events %}
 
-<div class="table-wrap">
-
-<table>
-
-<thead>
-
-<tr>
-<th>#</th>
-<th>Event</th>
-<th>Date</th>
-<th>Venue</th>
-<th>Duration</th>
-<th>Price</th>
-<th>Event</th>
-<th>Calendar</th>
-</tr>
-
-</thead>
-
-<tbody>
+<div class="events">
 
 {% for event in events %}
 
-<tr>
+<div class="event-card">
 
-<td>
-{{ loop.index }}
-</td>
-
-<td>
+<div class="event-number">
+Event {{ loop.index }}
+</div>
 
 <div class="event-name">
 {{ event.name }}
@@ -662,33 +747,44 @@ a:hover {
 
 {% if event.description %}
 
-<div class="description">
+<div class="event-description">
 {{ event.description }}
 </div>
 
 {% endif %}
 
-</td>
+<div class="details">
 
-<td>
+<div class="detail">
+<div class="label">Date</div>
+<div class="value">
 {{ event.date or "Unknown" }}
-</td>
+</div>
+</div>
 
-<td>
+<div class="detail">
+<div class="label">Venue</div>
+<div class="value">
 {{ event.venue or "Unknown" }}
-</td>
+</div>
+</div>
 
-<td>
+<div class="detail">
+<div class="label">Duration</div>
+<div class="value">
 
 {% if event.duration_minutes %}
-{{ event.duration_minutes }} min
+{{ event.duration_minutes }} minutes
 {% else %}
 Unknown
 {% endif %}
 
-</td>
+</div>
+</div>
 
-<td>
+<div class="detail">
+<div class="label">Price</div>
+<div class="value">
 
 {% if event.price is none %}
 Unknown
@@ -698,28 +794,12 @@ Free
 €{{ event.price }}
 {% endif %}
 
-</td>
+</div>
+</div>
 
-<td>
+</div>
 
-{% if event.event_url %}
-
-<a
-    href="{{ event.event_url }}"
-    target="_blank"
->
-View
-</a>
-
-{% else %}
-
-—
-
-{% endif %}
-
-</td>
-
-<td>
+<div class="actions">
 
 <form
     action="/add-to-calendar"
@@ -757,33 +837,35 @@ View
 >
 
 <button type="submit">
-Add
+Add to Calendar
 </button>
 
 </form>
 
-</td>
+{% if event.event_url %}
 
-</tr>
+<a
+    class="view-link"
+    href="{{ event.event_url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+View Event
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
 
 {% endfor %}
-
-</tbody>
-
-</table>
 
 </div>
 
 {% else %}
 
-<div class="table-wrap">
-
-<div
-    style="
-        padding:30px;
-        text-align:center;
-    "
->
+<div class="empty">
 
 <h2>
 No events found
@@ -792,8 +874,6 @@ No events found
 <p>
 {{ message }}
 </p>
-
-</div>
 
 </div>
 
@@ -809,6 +889,7 @@ No events found
 </div>
 
 </body>
+
 </html>
 """,
             events=events,
@@ -845,7 +926,6 @@ No events found
 
 </div>
 """, error=str(e)), 500
-
 
 @app.route(
     "/add-to-calendar",
