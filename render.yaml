@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: eventscout
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: FLASK_SECRET_KEY
+        generateValue: true

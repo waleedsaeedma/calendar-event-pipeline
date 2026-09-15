@@ -1,0 +1,157 @@
+models.py:132: new blank line at EOF.
+requirements.txt:1: trailing whitespace.
+[32m+[m[32mannotated-types==0.8.0[m[41m[m
+requirements.txt:2: trailing whitespace.
+[32m+[m[32manyio==4.15.1[m[41m[m
+requirements.txt:3: trailing whitespace.
+[32m+[m[32masttokens==3.0.2[m[41m[m
+requirements.txt:4: trailing whitespace.
+[32m+[m[32mblinker==1.9.0[m[41m[m
+requirements.txt:5: trailing whitespace.
+[32m+[m[32mcertifi==2026.7.22[m[41m[m
+requirements.txt:6: trailing whitespace.
+[32m+[m[32mcffi==2.1.1[m[41m[m
+requirements.txt:7: trailing whitespace.
+[32m+[m[32mcharset-normalizer==3.5.1[m[41m[m
+requirements.txt:8: trailing whitespace.
+[32m+[m[32mclick==8.5.0[m[41m[m
+requirements.txt:9: trailing whitespace.
+[32m+[m[32mcolorama==0.4.6[m[41m[m
+requirements.txt:10: trailing whitespace.
+[32m+[m[32mcomm==0.2.3[m[41m[m
+requirements.txt:11: trailing whitespace.
+[32m+[m[32mcryptography==50.0.1[m[41m[m
+requirements.txt:12: trailing whitespace.
+[32m+[m[32mdebugpy==1.8.21[m[41m[m
+requirements.txt:13: trailing whitespace.
+[32m+[m[32mexecuting==2.2.1[m[41m[m
+requirements.txt:14: trailing whitespace.
+[32m+[m[32mFlask==3.1.3[m[41m[m
+requirements.txt:15: trailing whitespace.
+[32m+[m[32mgoogle-api-core==2.36.0[m[41m[m
+requirements.txt:16: trailing whitespace.
+[32m+[m[32mgoogle-api-python-client==2.200.0[m[41m[m
+requirements.txt:17: trailing whitespace.
+[32m+[m[32mgoogle-auth==2.58.0[m[41m[m
+requirements.txt:18: trailing whitespace.
+[32m+[m[32mgoogle-auth-httplib2==0.4.2[m[41m[m
+requirements.txt:19: trailing whitespace.
+[32m+[m[32mgoogle-auth-oauthlib==1.4.1[m[41m[m
+requirements.txt:20: trailing whitespace.
+[32m+[m[32mgoogleapis-common-protos==1.75.3[m[41m[m
+requirements.txt:21: trailing whitespace.
+[32m+[m[32mh11==0.16.0[m[41m[m
+requirements.txt:22: trailing whitespace.
+[32m+[m[32mhttpcore==1.0.9[m[41m[m
+requirements.txt:23: trailing whitespace.
+[32m+[m[32mhttpcore2==2.12.0[m[41m[m
+requirements.txt:24: trailing whitespace.
+[32m+[m[32mhttplib2==0.32.0[m[41m[m
+requirements.txt:25: trailing whitespace.
+[32m+[m[32mhttpx==0.28.1[m[41m[m
+requirements.txt:26: trailing whitespace.
+[32m+[m[32mhttpx2==2.12.0[m[41m[m
+requirements.txt:27: trailing whitespace.
+[32m+[m[32midna==3.19[m[41m[m
+requirements.txt:28: trailing whitespace.
+[32m+[m[32mipykernel==7.3.0[m[41m[m
+requirements.txt:29: trailing whitespace.
+[32m+[m[32mipython==9.17.1[m[41m[m
+requirements.txt:30: trailing whitespace.
+[32m+[m[32mipython_pygments_lexers==1.1.1[m[41m[m
+requirements.txt:31: trailing whitespace.
+[32m+[m[32mitsdangerous==2.2.0[m[41m[m
+requirements.txt:32: trailing whitespace.
+[32m+[m[32mjedi==0.20.0[m[41m[m
+requirements.txt:33: trailing whitespace.
+[32m+[m[32mJinja2==3.1.6[m[41m[m
+requirements.txt:34: trailing whitespace.
+[32m+[m[32mjiter==0.16.0[m[41m[m
+requirements.txt:35: trailing whitespace.
+[32m+[m[32mjupyter_client==8.10.0[m[41m[m
+requirements.txt:36: trailing whitespace.
+[32m+[m[32mjupyter_core==5.9.1[m[41m[m
+requirements.txt:37: trailing whitespace.
+[32m+[m[32mMarkupSafe==3.0.3[m[41m[m
+requirements.txt:38: trailing whitespace.
+[32m+[m[32mmatplotlib-inline==0.2.2[m[41m[m
+requirements.txt:39: trailing whitespace.
+[32m+[m[32mnest-asyncio2==1.7.2[m[41m[m
+requirements.txt:40: trailing whitespace.
+[32m+[m[32moauthlib==3.3.1[m[41m[m
+requirements.txt:41: trailing whitespace.
+[32m+[m[32mopenai==3.13.0[m[41m[m
+requirements.txt:42: trailing whitespace.
+[32m+[m[32mopentelemetry-api==1.44.0[m[41m[m
+requirements.txt:43: trailing whitespace.
+[32m+[m[32mpackaging==26.3[m[41m[m
+requirements.txt:44: trailing whitespace.
+[32m+[m[32mparso==0.8.7[m[41m[m
+requirements.txt:45: trailing whitespace.
+[32m+[m[32mplatformdirs==4.11.8[m[41m[m
+requirements.txt:46: trailing whitespace.
+[32m+[m[32mprompt_toolkit==3.0.53[m[41m[m
+requirements.txt:47: trailing whitespace.
+[32m+[m[32mproto-plus==1.28.4[m[41m[m
+requirements.txt:48: trailing whitespace.
+[32m+[m[32mprotobuf==7.36.1[m[41m[m
+requirements.txt:49: trailing whitespace.
+[32m+[m[32mpsutil==7.2.2[m[41m[m
+requirements.txt:50: trailing whitespace.
+[32m+[m[32mpure_eval==0.2.4[m[41m[m
+requirements.txt:51: trailing whitespace.
+[32m+[m[32mpyasn1==0.6.4[m[41m[m
+requirements.txt:52: trailing whitespace.
+[32m+[m[32mpyasn1_modules==0.4.2[m[41m[m
+requirements.txt:53: trailing whitespace.
+[32m+[m[32mpycparser==3.0[m[41m[m
+requirements.txt:54: trailing whitespace.
+[32m+[m[32mpydantic==2.13.5[m[41m[m
+requirements.txt:55: trailing whitespace.
+[32m+[m[32mpydantic_core==2.46.5[m[41m[m
+requirements.txt:56: trailing whitespace.
+[32m+[m[32mPygments==2.21.0[m[41m[m
+requirements.txt:57: trailing whitespace.
+[32m+[m[32mpyparsing==3.3.2[m[41m[m
+requirements.txt:58: trailing whitespace.
+[32m+[m[32mpython-dateutil==2.9.0.post0[m[41m[m
+requirements.txt:59: trailing whitespace.
+[32m+[m[32mpython-dotenv==1.2.3[m[41m[m
+requirements.txt:60: trailing whitespace.
+[32m+[m[32mpyzmq==27.2.0[m[41m[m
+requirements.txt:61: trailing whitespace.
+[32m+[m[32mregex==2026.9.10[m[41m[m
+requirements.txt:62: trailing whitespace.
+[32m+[m[32mrequests==2.34.2[m[41m[m
+requirements.txt:63: trailing whitespace.
+[32m+[m[32mrequests-oauthlib==2.0.0[m[41m[m
+requirements.txt:64: trailing whitespace.
+[32m+[m[32msix==1.17.0[m[41m[m
+requirements.txt:65: trailing whitespace.
+[32m+[m[32msniffio==1.3.1[m[41m[m
+requirements.txt:66: trailing whitespace.
+[32m+[m[32mstack-data==0.6.3[m[41m[m
+requirements.txt:67: trailing whitespace.
+[32m+[m[32mtavily-python==0.8.2[m[41m[m
+requirements.txt:68: trailing whitespace.
+[32m+[m[32mtiktoken==0.14.0[m[41m[m
+requirements.txt:69: trailing whitespace.
+[32m+[m[32mtornado==6.5.8[m[41m[m
+requirements.txt:70: trailing whitespace.
+[32m+[m[32mtraitlets==5.16.1[m[41m[m
+requirements.txt:71: trailing whitespace.
+[32m+[m[32mtruststore==0.10.4[m[41m[m
+requirements.txt:72: trailing whitespace.
+[32m+[m[32mtyping-inspection==0.4.4[m[41m[m
+requirements.txt:73: trailing whitespace.
+[32m+[m[32mtyping_extensions==4.16.0[m[41m[m
+requirements.txt:74: trailing whitespace.
+[32m+[m[32muritemplate==4.2.0[m[41m[m
+requirements.txt:75: trailing whitespace.
+[32m+[m[32murllib3==2.7.0[m[41m[m
+requirements.txt:76: trailing whitespace.
+[32m+[m[32mwcwidth==0.8.3[m[41m[m
+requirements.txt:77: trailing whitespace.
+[32m+[m[32mWerkzeug==3.1.8[m[41m[m
+requirements.txt:78: trailing whitespace.
+[32m+[m[32mgunicorn[m[41m[m
